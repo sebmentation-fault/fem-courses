@@ -1,21 +1,18 @@
-enum RSEnum {
-    Foo(fn() -> i32),
-    Foo2(Option<i32>),
-    Bar(String),
-    Baz(Vec<String>),
-}
-
-fn bar -> i32 {
-    return 5;
-}
-
 fn main() {
-    let foo = RSEnum::Foo(bar);
+    let foo = Some (5);
+
+    if let Some(value) = foo {
+        // ...
+    }
 
     match foo {
-        RSEnum::Foo(fn_value) => {},
-        RSEnum::Foo2(Some(value)) => {},
-        RSEnum::Foo2(None) => {},
-        _ => {},
+        Some(value) => {},
+        None => {},
     }
+
+    foo.map(|x| {
+        // ...
+    });
+
+    foo.filter(|x| *x < 10);
 }
