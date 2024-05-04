@@ -25,4 +25,3 @@ int main() {
   printf("c: ");
   print(c);
 }
-
