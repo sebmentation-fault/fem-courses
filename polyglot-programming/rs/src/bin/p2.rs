@@ -70,7 +70,7 @@ impl Line {
 fn main() {
     let lines = get_input()
         .lines()
-        .flat_map(|x| str::parse(x))
+        .flat_map(str::parse)
         .filter(|x: &Line| x.is_horv())
         .collect::<Vec<Line>>();
 
