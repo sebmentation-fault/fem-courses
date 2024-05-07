@@ -18,4 +18,11 @@ func main() {
 
 	fmt.Printf("%+v", opts)
 
+	config, err := projector.NewConfig(opts)
+	if err != nil {
+		log.Fatalf("unable to get config %v", err)
+	}
+
+	fmt.Printf("%+v", config)
+
 }

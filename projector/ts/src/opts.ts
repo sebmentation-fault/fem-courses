@@ -2,7 +2,7 @@ import cli from "command-line-args"
 
 export type Opts = {
     args?: string[],
-    pwd?: string[],
+    pwd?: string,
     config?: string,
 }
 
