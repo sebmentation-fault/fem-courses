@@ -1,6 +1,8 @@
 package projector
 
-import "github.com/hellflame/argparse"
+import (
+	"github.com/hellflame/argparse"
+)
 
 type Opts struct {
 	Args   []string

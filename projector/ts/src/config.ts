@@ -1,4 +1,4 @@
-import path from "path";
+import * as path from "path";
 import { Opts } from "./opts"
 
 export enum Operation {
@@ -45,11 +45,11 @@ function getOperation(opts: Opts): Operation {
         return Operation.Print;
     }
 
-    if (opts[0] === "rm") {
+    if (opts.args[0] === "rm") {
         return Operation.Remove;
     }
 
-    if (opts[0] === "add") {
+    if (opts.args[0] === "add") {
         return Operation.Add;
     }
 
@@ -80,7 +80,7 @@ function getArgs(opts: Opts): string[] {
     if (opts.args.length !== 2) {
         throw new Error(`expected 1 argument but got ${opts.args.length - 1}`);
     }
-    return opts.args;
+    return opts.args.slice(1);
 
 }
 

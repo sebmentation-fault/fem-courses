@@ -104,10 +104,13 @@ func NewConfig(opts *Opts) (*Config, error) {
 		return nil, err
 	}
 
+	operation := getOperation(opts)
+
 	return &Config{
-		Pwd: pwd,
-		Config: config,
-		Args: args,
+		Pwd:	   pwd,
+		Args:	   args,
+		Config:    config,
+		Operation: operation,
 	}, nil
 }
 
