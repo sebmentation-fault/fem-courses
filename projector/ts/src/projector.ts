@@ -1,4 +1,3 @@
-import { escapeLeadingUnderscores } from "typescript";
 import { Config } from "./config"
 import * as fs from "fs";
 import * as path from "path";
@@ -84,6 +83,14 @@ export class Projector {
         if (dir) {
             delete dir[key];
         }
+    }
+
+    save() {
+        const configPath = path.dirname(this.config.config);
+        if (!fs.existsSync(configPath)) {
+            fs.mkdirSync(configPath, { recursive: true });
+        }
+        fs.writeFileSync(this.config.config, JSON.stringify(this.data));
     }
 
     public static fromConfig(config: Config): Projector {

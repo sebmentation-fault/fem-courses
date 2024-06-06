@@ -28,7 +28,7 @@ func getProjector(pwd string, data *projector.Data) *projector.Projector {
 		Args:      []string{},
 		Operation: projector.Print,
 		Pwd:       pwd,
-		Config:    "Hello, Sebastion",
+		Config:    "",
 	}
 
 	return projector.CreateProjector(config, data)

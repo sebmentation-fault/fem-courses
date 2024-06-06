@@ -17,7 +17,7 @@ func GetOpts() (*Opts, error) {
 
 	args := parser.Strings("a", "args", &argparse.Option{
 		Positional: true,
-		Required: true,
+		Required: false,
 		Default: "",
 	})
 
